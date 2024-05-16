@@ -1,0 +1,220 @@
+:root {
+    --very-dark-magenta: hsl(300, 43%, 22%);
+    --soft-pink: hsl(333, 80%, 67%);
+    --dark-grayish-magenta: hsl(303, 10%, 53%);
+    --light-grayish-magenta: hsl(300, 24%, 96%);
+    --white: hsl(0, 0%, 100%);
+}
+
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+     box-sizing: border-box; 
+}
+
+body {
+    font-family: "League Spartan", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 140%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    width: 1140px;
+}
+
+.top {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding-bottom: 60px;
+    flex-wrap: wrap;
+}
+
+.top-left {
+    width: 38%;
+    height: 100%;
+    color: var(--dark-grayish-magenta);
+}
+
+.top-left h1 {
+    font-size: 4rem;
+    color: var(--very-dark-magenta);
+    line-height: 3.5rem;
+    margin-bottom: 20px;
+}
+
+use {
+    &:nth-child(2) {
+      transform: translate(20px);
+    }
+    &:nth-child(3) {
+      transform: translate(40px);
+    }
+    &:nth-child(4) {
+      transform: translate(60px);
+    }
+    &:nth-child(5) {
+      transform: translate(80px);
+    }
+  }
+
+.all-ratings {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.rating-box {
+    background-color: var(--light-grayish-magenta);
+    color: var(--very-dark-magenta);
+    font-weight: 700;
+    font-size: 18px;
+    padding: 20px;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.rating {
+    display: block;
+    height: 20px;
+    width: 100px;
+  }
+
+.testimonials{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.testimonial-box {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--very-dark-magenta);
+    border-radius: 0.5rem;
+    max-width: 350px;
+    height:fit-content;
+    padding: 40px 30px;
+    color: var(--white);
+}
+
+.testimonial-box img {
+    border-radius: 50%;
+}
+
+.testimonial-box .info {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+.testimonial-box .info img {
+    height: 100%;
+    width: auto;
+}
+
+.testimonial-box .text {
+    display: flex;
+}
+
+.sub-info {
+    font-weight: 600;
+    margin-left: 20px;
+}
+
+.buyer {
+    color: var(--soft-pink);
+}
+
+@media (min-width: 1050px) {
+    body {
+        background-image: url(./images/bg-pattern-top-desktop.svg), url(./images/bg-pattern-bottom-desktop.svg);
+    background-position: top left, bottom right;
+    background-repeat: no-repeat;
+    }
+    .rating-box {
+        &:nth-of-type(2) {
+        margin-right: 40px;
+        margin-left: -40px
+        }
+        &:nth-of-type(1) {
+        margin-right: 80px;
+        margin-left: -80px;
+        }
+    }
+    .testimonial-box {
+        &:nth-of-type(2) {
+        margin-top: 20px;
+        }
+        &:nth-of-type(3) {
+        margin-top: 40px;
+        }
+    }
+}
+
+@media (max-width: 1049px) {
+    body {
+        background-image: url(./images/bg-pattern-top-mobile.svg), url(./images/bg-pattern-bottom-mobile.svg);
+    background-position: top left, bottom right;
+    background-repeat: no-repeat;
+    height: fit-content;
+    margin: 100px 20px;
+    }
+    .top {
+        justify-content: center;
+    }
+    .top-left {
+        width: 100%;
+        height: auto;
+        padding-bottom: 50px;
+        text-align: center;
+    }
+    .top-left h1 {
+        font-size: 3rem;
+        line-height: 1;
+    }
+    .all-ratings {
+        width: 70%;
+    }
+    .rating-box {
+        margin: 0;
+    }
+    .testimonials {
+        gap: 20px;
+        justify-content: center;
+    }
+    .testimonial-box {
+        width: calc(50% - 10px);
+    }
+}
+
+@media (max-width: 650px) {
+    body {
+        font-size: 18px;
+    }
+    .all-ratings {
+        width: 100%;
+    }
+    .rating-box {
+        flex-direction: column;
+        gap: 10px;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+    }
+    .testimonial-box {
+        width: 100%;
+    }
+}
